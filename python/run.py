@@ -14,7 +14,7 @@ import glob
 SIZE=[]
 txtfiles = []
 cls_id=0
-for file1 in glob.glob1(os.getcwd()+'/Images', "*.png"):
+for file1 in glob.glob1(os.getcwd()+'/Images/', "*.png"):
     	print (file1)
     	with open('Images/'+file1, "rb") as image_file:
         	image_bytes = base64.b64encode(image_file.read())
@@ -31,7 +31,7 @@ for file1 in glob.glob1(os.getcwd()+'/Images', "*.png"):
     		#pprint(api_response.results)
     		SIZE=[api_response.img_height,api_response.img_width]
     		cord=openalpr_api.models.plate_details.res
-		plate=openalpr_api.models.plate_details.plat
-    		pprint(plate)
+		#plate=openalpr_api.models.plate_details.plat
+    		pprint(cord)
 	except ApiException as e:
    		print "Exception when calling DefaultApi->recognize_bytes: %s\n" % e
